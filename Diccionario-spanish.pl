@@ -46,3 +46,5 @@ conjuncion --> [aunque].
 
 nexo --> [que].
 nexo --> [si].
+
+cuantificador --> [muy].
