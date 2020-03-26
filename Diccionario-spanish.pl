@@ -16,6 +16,7 @@ nombre --> [mujer].
 nombre --> [juan].
 nombre --> [maria].
 nombre --> [manzana].
+nombre --> [manzanas].
 nombre --> [gato].
 nombre --> [raton].
 nombre --> [ratones].
@@ -26,11 +27,12 @@ verbo --> [come].
 verbo --> [estudia].
 verbo --> [era].
 verbo --> [es].
+verbo --> [cazo].
 adjetivo --> [roja].
 adjetivo --> [negro].
 adjetivo --> [grande].
 adjetivo --> [gris].
 adjetivo --> [pequeno].
 preposicion --> [a].
-preposicion --> [e].
+preposicion --> [en].
 adverbio --> [que].
