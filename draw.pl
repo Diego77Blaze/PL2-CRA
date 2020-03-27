@@ -178,7 +178,7 @@ at(Level,_,Struct,Cur,Pos,In,Out,Tin,Tout,Din,Dout) :-
 
 for_each(Same,Same,_,_,X,X,Y,Y,Z,Z,Din,Dout) :- !, end(Din,Mid,End),
                                                 choose(End,Mid,Dout).
-                                        /* if End is ' ' then append '+'
+                                        /* if End is ' ' then append '+'c
                                         else append End */
 
 for_each(Begin,End,Struct,Level,Cur,New_Pos,In,Out,Tin,Tout,Din,Dout) :-
