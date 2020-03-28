@@ -18,7 +18,15 @@ g_nominal_basico(gnb(D,N,A)) --> determinante(D), nombre(N), g_adjetival(A).
 
 
 g_verbal(gv(V)) --> verbo(V).
-g_verbal(gv(V, GN)) --> verbo(V), g_nominal(GN).
+g_verbal(gv(V, GC)) --> verbo(V), g_complementos_predicado(GC).
+
+g_complementos_predicado(gcp(GNB)) --> g_nominal_basico(GNB). % Complemento directo
+g_complementos_predicado(gcp(GADJB)) --> g_adjetival(GADJB).
+g_complementos_predicado(gcp(GNB, GADJB)) --> g_nominal(GNB), g_adjetival(GADJB).
+g_complementos_predicado(gcp(GNB, A)) --> g_nominal(GNB), g_complemento_adverbial(A).
+g_complementos_predicado(gcp(A)) --> g_complemento_adverbial(A).
+g_complementos_predicado(gcp(GNB, GADBJ, A)) --> g_nominal(GNB), g_adjetival(GADBJ), g_complemento_adverbial(A).
+g_complementos_predicado(gcp(GADBJ, A)) --> g_adjetival(GADBJ), g_complemento_adverbial(A).
 
 
 g_adjetival_basico(gadjb(A)) --> adjetivo(A). 
@@ -43,11 +51,14 @@ det(un).
 nombre(n(X)) --> [X],{n(X)}.
 n(hombre).
 n(mujer).
+n(alumno).
 n(manzana).
+n(manzanas).
 n(maria).
 n(juan).
 n(gato).
 n(raton).
+n(ratones).
 n(universidad).
 n(ratones).
 
@@ -62,6 +73,7 @@ v(es).
 adjetivo(adj(X)) --> [X],{adj(X)}.
 adj(grande).
 adj(gris).
+adj(roja).
 
 
 adverbio(adv(X)) --> [X],{adv(X)}.
