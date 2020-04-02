@@ -4,7 +4,7 @@ determinant(det(art),und) --> [an].
 determinant(det(pos)) --> [my].
 
 pronoun(pron(pron), terc, pl) --> [they].
-pronoun(pron(pron),seg, sg) --> [you].
+pronoun(pron(pron),seg, _) --> [you].
 
 noun(n(n_1),sg,com) --> [rock].
 noun(n(n_2),sg,com) --> [paper].
@@ -12,8 +12,8 @@ noun(n(n_3),pl,com) --> [scissors].
 noun(n(n_4),sg,com) --> [apple].
 noun(n(n_4),pl,com) --> [apples].
 noun(n(n_5),sg,com) --> [man].
-noun(n(n_6),sg,prop) --> [john].
-noun(n(n_7),sg,prop) --> [mary].
+noun(n(n_6),_,prop) --> [john].
+noun(n(n_7),_,prop) --> [mary].
 noun(n(n_8),sg,com) --> [cat].
 noun(n(n_9),sg,com) --> [mouse].
 noun(n(n_10),sg,com) --> [university].
@@ -24,8 +24,9 @@ noun(n(n_14),sg,com) --> [canary].
 noun(n(n_15),sg,com) --> [coffee].
 noun(n(n_16),sg,com) --> [newspaper].
 noun(n(n_17),sg,prop) --> [oscar].
-noun(n(n_18),sg,prop) --> [wilde].
-noun(n(n_19),sg,com) --> [ghost].
+noun(n(n_18),_,prop) --> [wilde].
+noun(n(n_19),_,com) --> [ghost].
+noun(n(n_22),_,_,com) --> [canterville].
 
 verb(v(v_1),terc,sg,pres) --> [cuts].
 verb(v(v_1),_,_,pres) --> [cut].
