@@ -46,7 +46,7 @@ verbo(v(v_4),terc, sg,pres) --> [come].
 verbo(v(v_4),terc, pl,pres) --> [comen].
 verbo(v(v_5),terc, sg,pres) --> [ama].
 verbo(v(v_6),terc, sg,pres) --> [estudia].
-verbo(v(v_7),terc, sg,pas) --> [persiguio].%insertar tiempo?
+verbo(v(v_7),terc, sg,pas) --> [persiguio].
 verbo(v(v_8),terc, sg,pres) --> [es].
 verbo(v(v_9),prim, pl,pas) --> [vimos].
 verbo(v(v_10),terc, sg,pres) --> [canta].
