@@ -54,10 +54,15 @@ verb(v(v_10),terc,sg,pres) --> [sings].
 verb(v(v_11),terc,sg,pres) --> [has].
 verb(v(v_12),terc,sg,pres) --> [reads].
 verb(v(v_13),_,_,pas) --> [wrote].
+verb(v(v_14),_,_,pas) --> [caught].
+verb(v(v_15),prim,sg,pas) --> [was].
+verb(v(v_15),terc,sg,pas) --> [was].
+verb(v(v_15),seg,_,pas) --> [were].
+verb(v(v_15),_,_,pas) --> [were].
 
 adjective(adj(adj_1),_,_) --> [red].
 adjective(adj(adj_2),_,_) --> [big].
-adjective(adj(adj_3),_,_) --> [grey].
+adjective(adj(adj_3),_,_) --> [gray].
 adjective(adj(adj_4),_,_) --> [black].
 adjective(adj(adj_5),_,_) --> [yellow].
 adjective(adj(adj_6),_,_) --> [thin].

@@ -63,6 +63,7 @@ verbo(v(v_11),terc, sg,pres) --> [toma].
 verbo(v(v_12),terc, sg,pres) --> [lee].
 verbo(v(v_13),terc, sg,pas) --> [escribio].
 verbo(v(v_14),terc, sg,pas) --> [cazo].
+verbo(v(v_15),prim, sg,pas) --> [era].
 verbo(v(v_15),terc, sg,pas) --> [era].
 
 adjetivo(adj(adj_1), f, sg) --> [roja].
