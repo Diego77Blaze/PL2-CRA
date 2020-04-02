@@ -24,6 +24,6 @@ adjetivo --> [black].
 adjetivo --> [big].
 adjetivo --> [grey].
 adjetivo --> [small].
-preposicion --> [a].%%%%
+preposicion --> [a].
 preposicion --> [at].
 adverbio --> [that].
