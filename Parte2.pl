@@ -30,7 +30,7 @@ g_complementos_predicado(gcp(GADBJ, A)) --> g_adjetival(GADBJ), g_complemento_ad
 
 
 g_adjetival_basico(gadjb(A)) --> adjetivo(A). 
-g_adjetival_basico(gadjb(A, C)) --> adjetivo(A), cuantificador(C). 
+g_adjetival_basico(gadjb(A, C)) -->cuantificador(C), adjetivo(A).
 
 g_adjetival(gadj(GADJB)) --> g_adjetival_basico(GADJB).
 g_adjetival(gadj(GADJB,C,GADJB2)) --> g_adjetival_basico(GADJB), conjuncion(C), g_adjetival_basico(GADJB2).
