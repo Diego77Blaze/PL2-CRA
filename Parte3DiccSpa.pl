@@ -9,15 +9,15 @@ determinante(det(art_3),f,pl,ind,_) --> [unas].
 determinante(det(pos),_,_,pos,_) --> [mi].
 
 pronombre(pron(pron_1),prim,sg,_) --> [yo].
-pronombre(pron(pron_1),prim,pl,m) --> [nosotros].
-pronombre(pron(pron_1),prim,pl,f) --> [nosotras].
 pronombre(pron(pron_2),seg,sg,_) --> [tu].
-pronombre(pron(pron_2),seg,pl,m) --> [vosotros].
-pronombre(pron(pron_2),seg,pl,f) --> [vosotras].
 pronombre(pron(pron_3),terc,sg,m) --> [el].
-pronombre(pron(pron_3),terc,sg,f) --> [ella].
-pronombre(pron(pron_3),terc,pl,m) --> [ellos].
-pronombre(pron(pron_3),terc,pl,f) --> [ellas].
+pronombre(pron(pron_4),terc,sg,f) --> [ella].
+pronombre(pron(pron_5),prim,pl,m) --> [nosotros].
+pronombre(pron(pron_5),prim,pl,f) --> [nosotras].
+pronombre(pron(pron_6),seg,pl,m) --> [vosotros].
+pronombre(pron(pron_6),seg,pl,f) --> [vosotras].
+pronombre(pron(pron_7),terc,pl,m) --> [ellos].
+pronombre(pron(pron_7),terc,pl,f) --> [ellas].
 
 nombre(n(n_1),f,sg,com,_,terc) --> [piedra].
 nombre(n(n_2),m,sg,com,_,terc) --> [papel].
@@ -65,6 +65,7 @@ verbo(v(v_13),terc, sg,pas) --> [escribio].
 verbo(v(v_14),terc, sg,pas) --> [cazo].
 verbo(v(v_15),prim, sg,pas) --> [era].
 verbo(v(v_15),terc, sg,pas) --> [era].
+verbo(v(v_16),terc, sg,pres) --> [ama].
 
 adjetivo(adj(adj_1), f, sg, _) --> [roja].
 adjetivo(adj(adj_2), m, sg, _) --> [grande].
