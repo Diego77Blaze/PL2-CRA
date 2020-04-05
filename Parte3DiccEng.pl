@@ -31,10 +31,9 @@ noun(n(n_15),_,sg,com,nv,terc) --> [coffee].
 noun(n(n_16),_,sg,com,nv,terc) --> [newspaper].
 noun(n(n_17),m,sg,prop,v,terc) --> [oscar].
 noun(n(n_18),_,_,prop,nv,terc) --> [wilde].
-noun(n(n_19),_,_,com,nv,terc) --> [ghost].
 noun(n(n_20),f,sg,com,nv,terc) --> [woman].
 noun(n(n_21),m,sg,com,nv,terc) --> [garden].
-noun(n(n_22),_,_,com,nv,terc) --> [canterville].
+noun(n(n_22),_,_,com,nv,terc) --> [canterville, ghost].
 noun(n(n_23),_,pl,com,v,terc) --> [apples].
 noun(n(n_24),_,sg,com,nv,terc) --> [mice].
 

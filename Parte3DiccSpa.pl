@@ -37,10 +37,10 @@ nombre(n(n_15),m,sg,com,_,terc) --> [cafe].
 nombre(n(n_16),m,sg,com,_,terc) --> [periodico].
 nombre(n(n_17),m,_,prop,_,terc) --> [oscar].
 nombre(n(n_18),_,_,prop,_,terc) --> [wilde].
-nombre(n(n_19),m,sg,com,_,terc) --> [fantasma].
+
 nombre(n(n_20),f,sg,com,_,terc) --> [mujer].
 nombre(n(n_21),m,sg,com,_,terc) --> [jardin].
-nombre(n(n_22),_,_,com,_,terc) --> [canterville].
+nombre(n(n_22),m,sg,com,_,terc) --> [fantasma,de,canterville].
 nombre(n(n_23),f,pl,com,_,terc) --> [manzanas].
 nombre(n(n_24),m,pl,com,_,terc) --> [ratones].
 
