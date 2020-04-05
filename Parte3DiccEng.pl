@@ -12,30 +12,30 @@ pronoun(pron(pron_3),terc,sg,m) --> [he].
 pronoun(pron(pron_3),terc,sg,f) --> [she].
 pronoun(pron(pron_3),terc,pl,_) --> [they].
 
-noun(n(n_1),_,sg,com,nv) --> [rock].
-noun(n(n_2),_,sg,com,nv) --> [paper].
-noun(n(n_3),_,pl,com,nv) --> [scissors].
-noun(n(n_4),_,sg,com,v) --> [apple].
-noun(n(n_5),m,sg,com,nv) --> [man].
-noun(n(n_6),m,_,prop,nv) --> [john].
-noun(n(n_7),f,_,prop,nv) --> [mary].
-noun(n(n_8),_,sg,com,nv) --> [cat].%añadir atributo big p.ej
-noun(n(n_9),_,sg,com,nv) --> [mouse].
-noun(n(n_10),_,sg,com,v) --> [university].
-noun(n(n_11),_,sg,com,nv) --> [student].
-noun(n(n_12),_,sg,com,nv) --> [dog].
-noun(n(n_13),_,sg,com,nv) --> [neighbour].
-noun(n(n_14),_,sg,com,nv) --> [canary].
-noun(n(n_15),_,sg,com,nv) --> [coffee].
-noun(n(n_16),_,sg,com,nv) --> [newspaper].
-noun(n(n_17),m,sg,prop,v) --> [oscar].
-noun(n(n_18),_,_,prop,nv) --> [wilde].
-noun(n(n_19),_,_,com,nv) --> [ghost].
-noun(n(n_20),f,sg,com,nv) --> [woman].
-noun(n(n_21),m,sg,com,nv) --> [garden].
-noun(n(n_22),_,_,com,nv) --> [canterville].
-noun(n(n_23),_,pl,com,v) --> [apples].
-noun(n(n_24),_,sg,com,nv) --> [mice].
+noun(n(n_1),_,sg,com,nv,terc) --> [rock].
+noun(n(n_2),_,sg,com,nv,terc) --> [paper].
+noun(n(n_3),_,pl,com,nv,terc) --> [scissors].
+noun(n(n_4),_,sg,com,v,terc) --> [apple].
+noun(n(n_5),m,sg,com,nv,terc) --> [man].
+noun(n(n_6),m,_,prop,nv,terc) --> [john].
+noun(n(n_7),f,_,prop,nv,terc) --> [mary].
+noun(n(n_8),_,sg,com,nv,terc) --> [cat].%añadir atributo big p.ej
+noun(n(n_9),_,sg,com,nv,terc) --> [mouse].
+noun(n(n_10),_,sg,com,v,terc) --> [university].
+noun(n(n_11),_,sg,com,nv,terc) --> [student].
+noun(n(n_12),_,sg,com,nv,terc) --> [dog].
+noun(n(n_13),_,sg,com,nv,terc) --> [neighbour].
+noun(n(n_14),_,sg,com,nv,terc) --> [canary].
+noun(n(n_15),_,sg,com,nv,terc) --> [coffee].
+noun(n(n_16),_,sg,com,nv,terc) --> [newspaper].
+noun(n(n_17),m,sg,prop,v,terc) --> [oscar].
+noun(n(n_18),_,_,prop,nv,terc) --> [wilde].
+noun(n(n_19),_,_,com,nv,terc) --> [ghost].
+noun(n(n_20),f,sg,com,nv,terc) --> [woman].
+noun(n(n_21),m,sg,com,nv,terc) --> [garden].
+noun(n(n_22),_,_,com,nv,terc) --> [canterville].
+noun(n(n_23),_,pl,com,v,terc) --> [apples].
+noun(n(n_24),_,sg,com,nv,terc) --> [mice].
 
 verb(v(v_1),terc,sg,pres) --> [cuts].
 verb(v(v_1),_,_,_) --> [cut].
