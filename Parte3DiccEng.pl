@@ -1,4 +1,4 @@
-determinant(det(art_1),_,_,def,_) --> [the].
+﻿determinant(det(art_1),_,_,def,_) --> [the].
 determinant(det(art_2),_,sg,und,nv) --> [a].
 determinant(det(art_2),_,sg,und,v) --> [an].
 determinant(det(art_3),_,sg,und,_) --> [].%
@@ -60,13 +60,13 @@ verb(v(v_15),terc,sg,pas) --> [was].
 verb(v(v_15),seg,_,pas) --> [were].
 verb(v(v_15),_,_,pas) --> [were].
 
-adjective(adj(adj_1),_,_) --> [red].
-adjective(adj(adj_2),_,_) --> [big].
-adjective(adj(adj_3),_,_) --> [gray].
-adjective(adj(adj_4),_,_) --> [black].
-adjective(adj(adj_5),_,_) --> [yellow].
-adjective(adj(adj_6),_,_) --> [thin].
-adjective(adj(adj_7),_,_) --> [tall].
+adjective(adj(adj_1),_,_,nv) --> [red].
+adjective(adj(adj_2),_,_,nv) --> [big].
+adjective(adj(adj_3),_,_,nv) --> [gray].
+adjective(adj(adj_4),_,_,nv) --> [black].
+adjective(adj(adj_5),_,_,nv) --> [yellow].
+adjective(adj(adj_6),_,_,nv) --> [thin].
+adjective(adj(adj_7),_,_,nv) --> [tall].
 
 preposition(prep(prep_1)) --> [].
 preposition(prep(prep_2)) --> [at].

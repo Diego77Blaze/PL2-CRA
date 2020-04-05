@@ -66,13 +66,13 @@ verbo(v(v_14),terc, sg,pas) --> [cazo].
 verbo(v(v_15),prim, sg,pas) --> [era].
 verbo(v(v_15),terc, sg,pas) --> [era].
 
-adjetivo(adj(adj_1), f, sg) --> [roja].
-adjetivo(adj(adj_2), m, sg) --> [grande].
-adjetivo(adj(adj_3), m, sg) --> [gris].
-adjetivo(adj(adj_4), m, sg) --> [negro].
-adjetivo(adj(adj_5), m, sg) --> [amarillo].
-adjetivo(adj(adj_6), m, sg) --> [delgado].
-adjetivo(adj(adj_7), f, sg) --> [alta].
+adjetivo(adj(adj_1), f, sg, _) --> [roja].
+adjetivo(adj(adj_2), m, sg, _) --> [grande].
+adjetivo(adj(adj_3), m, sg, _) --> [gris].
+adjetivo(adj(adj_4), m, sg, _) --> [negro].
+adjetivo(adj(adj_5), m, sg, _) --> [amarillo].
+adjetivo(adj(adj_6), m, sg, _) --> [delgado].
+adjetivo(adj(adj_7), f, sg, _) --> [alta].
 
 adverbio(adv(adv_1)) --> [ayer].
 adverbio(adv(adv_2)) --> [bien].
