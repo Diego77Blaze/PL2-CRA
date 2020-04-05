@@ -53,7 +53,7 @@ verbo(v(v_3),terc,pl,pres) --> [rompen].
 verbo(v(v_4),seg, sg,pres) --> [comes].
 verbo(v(v_4),terc, sg,pres) --> [come].
 verbo(v(v_4),terc, pl,pres) --> [comen].
-verbo(v(v_5),terc, sg,pres) --> [ama].
+verbo(v(v_5),terc, sg,pres) --> [ama,a].
 verbo(v(v_6),terc, sg,pres) --> [estudia].
 verbo(v(v_7),terc, sg,pas) --> [persiguio].
 verbo(v(v_8),terc, sg,pres) --> [es].
