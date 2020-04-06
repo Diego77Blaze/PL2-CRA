@@ -13,13 +13,19 @@ nom_p_basic(gnb(Prop),P,N) --> pronoun(Prop,P,N,_).
 nom_p_basic(gnb(Nom,Nom2),_,N) --> noun(Nom,_,N,_,_,_), noun(Nom2,_,_,_,_,_).
 nom_p_basic(gnb(Nom),P,N) --> noun(Nom,_,N,_,_,P).
 nom_p_basic(gnb(D,Nom),P,N) --> determinant(D,G,N,_,V), noun(Nom,G,N,_,V,P).
-nom_p_basic(gnb(Prep),P,N) --> prep_p(Prep,P,N).
+%nom_p_basic(gnb(Prep),P,N) --> prep_p(Prep,P,N).
 nom_p_basic(gnb(D,Nom,A),P,N) --> determinant(D,G,N,_,V), adj_p(A,G,N,V), noun(Nom,G,N,_,_,P).
+
+nom_p_simple(gns(Nom)) --> noun(Nom,_,_,com,_,_).
+nom_p_simple(gns(Det,Nom)) --> determinant(Det,G,N,_,_), noun(Nom,G,N,_,_,_).
 
 prep_p(gp(Prep,Nom),P,N) --> preposition(Prep), noun(Nom,_,N,_,_,P).
 prep_p(gp(Prep,D,Nom),P,N) --> preposition(Prep), determinant(D,G,N,_,_), noun(Nom,G,N,_,_,P).
 
 verbal_p(gv(V),P,N) --> verb(V,P,N,_).
+verbal_p(gv(vb(v_5),Nom),P,N) --> verb(vb(v_5),P,N,_), noun(Nom,_,_,prop,_,_).
+verbal_p(gv(vb(v_5),Nom, GC),P,N) --> verb(vb(v_5),P,N,_), noun(Nom,_,_,prop,_,_), pred_complements(GC,N).
+verbal_p(gv(vb(v_5),SN),P,N) --> verb(vb(v_5),P,N,_), nom_p_simple(SN),!.
 verbal_p(gv(V,GC),P,N) --> verb(V,P,N,_), pred_complements(GC,N).
 
 pred_complements(gcp(GNB),_) --> nom_p_basic(GNB,_,_).
@@ -60,11 +66,17 @@ g_nominal_basico(gnb(D,Nom),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,_,_
 g_nominal_basico(gnb(Prep),P,N) --> g_preposicional(Prep,P,N).
 g_nominal_basico(gnb(D,Nom,A),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,_,_,P), g_adjetival(A,G,N).
 
+g_nominal_simple(gns(Nom)) --> nombre(Nom,_,_,com,_,_).
+g_nominal_simple(gns(Det,Nom)) --> determinante(Det,G,N,_,_), nombre(Nom,G,N,com,_,_).
+
 g_preposicional(gp(Prep,Nom),P,N) --> preposicion(Prep), nombre(Nom,_,N,_,_,P).
 g_preposicional(gp(Prep,D,Nom),P,N) --> preposicion(Prep), determinante(D,G,N,_,P), nombre(Nom,G,N,_,_,_).
 
-g_verbal(gv(V),P,N) --> verbo(V,P,N,_).
-g_verbal(gv(V,GC),P,N) --> verbo(V,P,N,_), g_complementos_predicado(GC,N).
+g_verbal(gv(V),P,N) --> verbo(V,P,N,_,_).
+g_verbal(gv(vb(v_5),Nom),P,N) --> verbo(vb(v_5),P,N,_,ca), nombre(Nom,_,_,prop,_,_).
+g_verbal(gv(vb(v_5),SN),P,N) --> verbo(vb(v_5),P,N,_,sa),g_nominal_simple(SN),!.
+g_verbal(gv(vb(v_5),Nom,GC),P,N) --> verbo(vb(v_5),P,N,_,sa), nombre(Nom,_,_,com,_,_), g_complementos_predicado(GC,N),!.
+g_verbal(gv(V,GC),P,N) --> verbo(V,P,N,_,_), g_complementos_predicado(GC,N).
 
 g_complementos_predicado(gcp(GNB),_) --> g_nominal_basico(GNB,_,_). % Complemento directo
 g_complementos_predicado(gcp(GADJB),N) --> g_adjetival(GADJB,_,N).
