@@ -2,6 +2,7 @@
 :-consult('Parte3DiccEng').
 %English
 sentence(o(GN,GV)) --> nom_p(GN,P,N), verbal_p(GV,P,N).
+%sentence(o(vb(v_9))) --> pronoun(pron(pron_5),_,_,_), verbal_p(vb(v_9),_,_),!.
 sentence(o(GV)) --> verbal_p(GV,_,_).
 sentence(o(O,C,O2)) --> sentence(O), conjunction(C), sentence(O2).
 
@@ -52,6 +53,7 @@ adv_p(gca(C)) --> quantifier(C).
 
 %Español
 oracion(o(GN,GV)) --> g_nominal(GN,P,N), g_verbal(GV,P,N).
+%oracion(o(pron(pron_5),vb(v_9))) --> g_verbal(vb(v_9),_,_),!.
 oracion(o(GV)) --> g_verbal(GV,_,_).
 oracion(o(O,C,O2)) --> oracion(O), conjuncion(C), oracion(O2).
 
@@ -62,15 +64,15 @@ g_nominal(gn(GNB,C,GNB2),terc,pl) --> g_nominal_basico(GNB,_,N), conjuncion(C), 
 g_nominal_basico(gnb(Prop),P, N) --> pronombre(Prop,P,N,_).
 g_nominal_basico(gnb(Nom,Nom2),P,N) --> nombre(Nom,_,N,_,_,P), nombre(Nom2,_,_,_,_,_).
 g_nominal_basico(gnb(Nom),P,N) --> nombre(Nom,_,N,_,_,P).
-g_nominal_basico(gnb(D,Nom),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,_,_,P).
-g_nominal_basico(gnb(Prep),P,N) --> g_preposicional(Prep,P,N).
-g_nominal_basico(gnb(D,Nom,A),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,_,_,P), g_adjetival(A,G,N).
+g_nominal_basico(gnb(D,Nom),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P).
+%g_nominal_basico(gnb(Prep),P,N) --> g_preposicional(Prep,P,N,_).
+g_nominal_basico(gnb(D,Nom,A),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P), g_adjetival(A,G,N).
 
 g_nominal_simple(gns(Nom)) --> nombre(Nom,_,_,com,_,_).
 g_nominal_simple(gns(Det,Nom)) --> determinante(Det,G,N,_,_), nombre(Nom,G,N,com,_,_).
 
-g_preposicional(gp(Prep,Nom),P,N) --> preposicion(Prep), nombre(Nom,_,N,_,_,P).
-g_preposicional(gp(Prep,D,Nom),P,N) --> preposicion(Prep), determinante(D,G,N,_,P), nombre(Nom,G,N,_,_,_).
+g_preposicional(gp(Prep,Nom),P,N,T) --> preposicion(Prep), nombre(Nom,_,N,_,T,P).
+g_preposicional(gp(Prep,D,Nom),P,N,T) --> preposicion(Prep), determinante(D,G,N,_,_), nombre(Nom,G,N,_,T,P).
 
 g_verbal(gv(V),P,N) --> verbo(V,P,N,_,_).
 g_verbal(gv(vb(v_5),Nom),P,N) --> verbo(vb(v_5),P,N,_,ca), nombre(Nom,_,_,prop,_,_).
@@ -88,7 +90,7 @@ g_complementos_predicado(gcp(GADBJ,A),N) --> g_adjetival(GADBJ,_,N), g_complemen
 
 g_adjetival_basico(gadjb(A),G,N) --> adjetivo(A,G,N,_).
 g_adjetival_basico(gadjb(A,C),G,N) -->cuantificador(C), adjetivo(A,G,N,_).
-g_adjetival_basico(gadjb(P),N) --> g_preposicional(P,N).
+g_adjetival_basico(gadjb(P),N) --> g_preposicional(P,N,_).
 
 g_adjetival(gadj(GADJB),G,N) --> g_adjetival_basico(GADJB,G,N).
 g_adjetival(gadj(GADJB,C,GADJB2),G,N) --> g_adjetival_basico(GADJB,G,N), conjuncion(C), g_adjetival_basico(GADJB2,G,N).
@@ -96,5 +98,5 @@ g_adjetival(gadj(GADJB,Nx,O),G,N) --> g_adjetival_basico(GADJB,G,N), nexo(Nx), o
 
 g_complemento_adverbial(gca(A)) --> adverbio(A).
 g_complemento_adverbial(gca(C,A)) --> cuantificador(C), adverbio(A).
-g_complemento_adverbial(gca(Prep)) --> g_preposicional(Prep,_,_).
+g_complemento_adverbial(gca(Prep)) --> g_preposicional(Prep,_,_,plac).
 g_complemento_adverbial(gca(C)) --> cuantificador(C).

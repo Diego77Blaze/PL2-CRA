@@ -1,7 +1,8 @@
 ﻿determinant(det(art_1),_,_,def,_) --> [the].
 determinant(det(art_2),_,sg,und,nv) --> [a].
 determinant(det(art_2),_,sg,und,v) --> [an].
-determinant(det(art_3),_,sg,und,_) --> [].%
+determinant(det(art_3),_,sg,und,_) --> [].
+determinant(det(art_4),_,pl,und,_) --> [some].
 determinant(det(pos),_,sg,pos,_) --> [my].
 determinant(det(pos),_,_,_,_) --> [].%
 
@@ -61,7 +62,7 @@ verb(vb(v_5),terc,sg,pres) --> [loves].
 verb(vb(v_6),terc,sg,pres) --> [studies].
 verb(vb(v_7),_,_,pas) --> [chased].
 verb(vb(v_8),terc,sg,pres) --> [is].
-verb(vb(v_9),_,_,pas) --> [saw].
+verb(vb(v_9),_,_,pas) --> [we,saw].
 verb(vb(v_10),terc,sg,pres) --> [sings].
 verb(vb(v_11),terc,sg,pres) --> [has].
 verb(vb(v_12),terc,sg,pres) --> [reads].
@@ -82,9 +83,9 @@ adjective(adj(adj_5),_,_,nv) --> [yellow].
 adjective(adj(adj_6),_,_,nv) --> [thin].
 adjective(adj(adj_7),_,_,nv) --> [tall].
 
-preposition(prep(prep_1)) --> [].
-preposition(prep(prep_2)) --> [at].
-preposition(prep(prep_3)) --> [].
+%preposition(prep(prep_1)) --> [].
+preposition(prep(prep_1)) --> [at].
+preposition(prep(prep_2)) --> [].
 
 nexus(nx(nx_1)) --> [that].
 
