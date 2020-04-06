@@ -44,28 +44,29 @@ nombre(n(n_22),m,sg,com,_,terc) --> [fantasma,de,canterville].
 nombre(n(n_23),f,pl,com,_,terc) --> [manzanas].
 nombre(n(n_24),m,pl,com,_,terc) --> [ratones].
 
-verbo(v(v_1),terc,sg,pres) --> [corta].
-verbo(v(v_1),terc,pl,pres) --> [cortan].
-verbo(v(v_2),terc,sg,pres) --> [envuelve].
-verbo(v(v_2),terc,pl,pres) --> [envuelven].
-verbo(v(v_3),terc,sg,pres) --> [rompe].
-verbo(v(v_3),terc,pl,pres) --> [rompen].
-verbo(v(v_4),seg, sg,pres) --> [comes].
-verbo(v(v_4),terc, sg,pres) --> [come].
-verbo(v(v_4),terc, pl,pres) --> [comen].
-verbo(v(v_5),terc, sg,pres) --> [ama,a].
-verbo(v(v_6),terc, sg,pres) --> [estudia].
-verbo(v(v_7),terc, sg,pas) --> [persiguio].
-verbo(v(v_8),terc, sg,pres) --> [es].
-verbo(v(v_9),prim, pl,pas) --> [vimos].
-verbo(v(v_10),terc, sg,pres) --> [canta].
-verbo(v(v_11),terc, sg,pres) --> [toma].
-verbo(v(v_12),terc, sg,pres) --> [lee].
-verbo(v(v_13),terc, sg,pas) --> [escribio].
-verbo(v(v_14),terc, sg,pas) --> [cazo].
-verbo(v(v_15),prim, sg,pas) --> [era].
-verbo(v(v_15),terc, sg,pas) --> [era].
-verbo(v(v_16),terc, sg,pres) --> [ama].
+verbo(vb(v_1),terc,sg,pres,_) --> [corta].
+verbo(vb(v_1),terc,pl,pres,_) --> [cortan].
+verbo(vb(v_2),terc,sg,pres,_) --> [envuelve].
+verbo(vb(v_2),terc,pl,pres,_) --> [envuelven].
+verbo(vb(v_3),terc,sg,pres,_) --> [rompe].
+verbo(vb(v_3),terc,pl,pres,_) --> [rompen].
+verbo(vb(v_4),seg, sg,pres,_) --> [comes].
+verbo(vb(v_4),terc, sg,pres,_) --> [come].
+verbo(vb(v_4),terc, pl,pres,_) --> [comen].
+verbo(vb(v_5),terc, sg,pres,sa) --> [ama].
+verbo(vb(v_5),terc, sg,pres,ca) --> [ama,a].
+verbo(vb(v_6),terc, sg,pres,_) --> [estudia].
+verbo(vb(v_7),terc, sg,pas,_) --> [persiguio].
+verbo(vb(v_8),terc, sg,pres,_) --> [es].
+verbo(vb(v_9),prim, pl,pas,_) --> [vimos].
+verbo(vb(v_10),terc, sg,pres,_) --> [canta].
+verbo(vb(v_11),terc, sg,pres,_) --> [toma].
+verbo(vb(v_12),terc, sg,pres,_) --> [lee].
+verbo(vb(v_13),terc, sg,pas,_) --> [escribio].
+verbo(vb(v_14),terc, sg,pas,_) --> [cazo].
+verbo(vb(v_15),prim, sg,pas,_) --> [era].
+verbo(vb(v_15),terc, sg,pas,_) --> [era].
+%verbo(v(v_16),terc, sg,pres) --> [ama].
 
 adjetivo(adj(adj_1), f, sg, _) --> [roja].
 adjetivo(adj(adj_2), m, sg, _) --> [grande].
