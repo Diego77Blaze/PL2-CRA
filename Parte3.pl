@@ -4,7 +4,9 @@
 sentence(o(GN,GV)) --> nom_p(GN,P,N), verbal_p(GV,P,N).
 %sentence(o(vb(v_9))) --> pronoun(pron(pron_5),_,_,_), verbal_p(vb(v_9),_,_),!.
 sentence(o(GV)) --> verbal_p(GV,_,_).
-sentence(o(O,C,O2)) --> sentence(O), conjunction(C), sentence(O2).
+%sentence(o(O,C,O2)) --> sentence(O), conjunction(C), sentence(O2).
+sentence(o(GN,GV,C,O)) --> nom_p(GN,P,N), verbal_p(GV,P,N), conjunction(C), sentence(O).
+sentence(o(GV,C,O)) --> verbal_p(GV,_,_), conjunction(C), sentence(O).
 
 nom_p(gn(GNB),P,N) --> nom_p_basic(GNB,P,N).
 nom_p(gn(GNB,Nx,O),P,N) --> nom_p_basic(GNB,P,N), nexus(Nx), sentence(O).
@@ -53,9 +55,11 @@ adv_p(gca(C)) --> quantifier(C).
 
 %Español
 oracion(o(GN,GV)) --> g_nominal(GN,P,N), g_verbal(GV,P,N).
-%oracion(o(pron(pron_5),vb(v_9))) --> g_verbal(vb(v_9),_,_),!.
 oracion(o(GV)) --> g_verbal(GV,_,_).
-oracion(o(O,C,O2)) --> oracion(O), conjuncion(C), oracion(O2).
+%oracion(o(pron(pron_5),vb(v_9))) --> g_verbal(vb(v_9),_,_),!.
+%oracion(o(O,C,O2)) --> oracion(O), conjuncion(C), oracion(O2).
+oracion(o(GN,GV,C,O)) --> g_nominal(GN,P,N), g_verbal(GV,P,N), conjuncion(C), oracion(O).
+oracion(o(GV,C,O)) --> g_verbal(GV,_,_), conjuncion(C), oracion(O).
 
 g_nominal(gn(GNB),P,N) --> g_nominal_basico(GNB,P,N).
 g_nominal(gn(GNB,Nx,O),P,N) --> g_nominal_basico(GNB,P,N), nexo(Nx), oracion(O).
