@@ -1,4 +1,5 @@
 ﻿determinant(det(art_1),_,_,def,_) --> [the].
+determinant(det(art_1),_,_,und,_) --> [].
 determinant(det(art_2),_,sg,und,nv) --> [a].
 determinant(det(art_2),_,sg,und,v) --> [an].
 determinant(det(art_3),_,sg,und,_) --> [].

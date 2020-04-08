@@ -1,40 +1,45 @@
 ﻿:-consult('Parte3DiccSpa').
 :-consult('Parte3DiccEng').
 %English
-sentence(o(GN,GV)) --> nom_p(GN,P,N), verbal_p(GV,P,N).
+sentence(o(GN,GV)) --> nom_p(GN,P,N,suj), verbal_p(GV,P,N).
 %sentence(o(vb(v_9))) --> pronoun(pron(pron_5),_,_,_), verbal_p(vb(v_9),_,_),!.
 sentence(o(GV)) --> verbal_p(GV,_,_).
 %sentence(o(O,C,O2)) --> sentence(O), conjunction(C), sentence(O2).
-sentence(o(GN,GV,C,O)) --> nom_p(GN,P,N), verbal_p(GV,P,N), conjunction(C), sentence(O).
+sentence(o(GN,GV,C,O)) --> nom_p(GN,P,N,suj), verbal_p(GV,P,N), conjunction(C), sentence(O).
 sentence(o(GV,C,O)) --> verbal_p(GV,_,_), conjunction(C), sentence(O).
 
-nom_p(gn(GNB),P,N) --> nom_p_basic(GNB,P,N).
-nom_p(gn(GNB,Nx,O),P,N) --> nom_p_basic(GNB,P,N), nexus(Nx), sentence(O).
-nom_p(gn(GNB,C,GNB2),terc,pl) --> nom_p_basic(GNB,_,_), conjunction(C), nom_p_basic(GNB2,_,_).
+nom_p(gn(GNB),P,N,Comp) --> nom_p_basic(GNB,P,N,Comp).
+nom_p(gn(GNB,Nx,O),P,N,Comp) --> nom_p_basic(GNB,P,N,Comp), nexus(Nx), sentence(O).
+nom_p(gn(GNB,C,GNB2),terc,pl,Comp) --> nom_p_basic(GNB,_,_,Comp), conjunction(C), nom_p_basic(GNB2,_,_,Comp).
 
-nom_p_basic(gnb(Prop),P,N) --> pronoun(Prop,P,N,_).
-nom_p_basic(gnb(Nom,Nom2),_,N) --> noun(Nom,_,N,_,_,_), noun(Nom2,_,_,_,_,_).
-nom_p_basic(gnb(Nom),P,N) --> noun(Nom,_,N,_,_,P).
-nom_p_basic(gnb(D,Nom),P,N) --> determinant(D,G,N,_,V), noun(Nom,G,N,_,V,P).
+nom_p_basic(gnb(Prop),P,N,_) --> pronoun(Prop,P,N,_).
+nom_p_basic(gnb(Nom,Nom2),_,N,_) --> noun(Nom,_,N,_,_,_), noun(Nom2,_,_,_,_,_).
+nom_p_basic(gnb(det(art_1),n(n_10)),P,N,suj) --> determinant(det(art_1),G,N,und,V), noun(n(n_10),G,N,_,V,P),!.
+nom_p_basic(gnb(Nom),P,N,_) --> noun(Nom,_,N,_,_,P).
+nom_p_basic(gnb(D,Nom),P,N,_) --> determinant(D,G,N,_,V), noun(Nom,G,N,_,V,P),!.
 %nom_p_basic(gnb(Prep),P,N) --> prep_p(Prep,P,N).
-nom_p_basic(gnb(D,Nom,A),P,N) --> determinant(D,G,N,_,V), adj_p(A,G,N,V), noun(Nom,G,N,_,_,P).
+nom_p_basic(gnb(D,Nom,A),P,N,_) --> determinant(D,G,N,_,V), adj_p(A,G,N,V), noun(Nom,G,N,_,_,P).
 
-nom_p_simple(gns(Nom)) --> noun(Nom,_,_,com,_,_).
-nom_p_simple(gns(Det,Nom)) --> determinant(Det,G,N,_,_), noun(Nom,G,N,_,_,_).
+nom_p_simple(gns(det(art_1),n(n_10)),nsuj) --> determinant(det(art_1),_,_,und,_), noun(n(n_10),_,_,_,_,_).
+nom_p_simple(gns(Nom),_) --> noun(Nom,_,_,com,_,_).
+nom_p_simple(gns(Det,Nom),suj) --> determinant(Det,G,N,_,_), noun(Nom,G,N,_,_,_).
 
-prep_p(gp(Prep,Nom),P,N) --> preposition(Prep), noun(Nom,_,N,_,_,P).
-prep_p(gp(Prep,D,Nom),P,N) --> preposition(Prep), determinant(D,G,N,_,_), noun(Nom,G,N,_,_,P).
+prep_p(gp(Prep,det(art_1),n(n_10)),P,N,nsuj) --> preposition(Prep), determinant(det(art_1),_,_,und,_), noun(n(n_10),_,N,_,_,P),!.
+prep_p(gp(Prep,Nom),P,N,_) --> preposition(Prep), noun(Nom,_,N,_,_,P).
+prep_p(gp(Prep,D,Nom),P,N,_) --> preposition(Prep), determinant(D,G,N,_,_), noun(Nom,G,N,_,_,P).
 
 verbal_p(gv(V),P,N) --> verb(V,P,N,_).
 verbal_p(gv(vb(v_5),Nom),P,N) --> verb(vb(v_5),P,N,_), noun(Nom,_,_,prop,_,_).
+verbal_p(gv(vb(v_5),det(art_1),n(n_10)),P,N) --> verb(vb(v_5),P,N,_), determinant(det(art_1),_,_,und,_), noun(n(n_10),_,_,prop,_,_),!.
 verbal_p(gv(vb(v_5),Nom, GC),P,N) --> verb(vb(v_5),P,N,_), noun(Nom,_,_,prop,_,_), pred_complements(GC,N).
-verbal_p(gv(vb(v_5),SN),P,N) --> verb(vb(v_5),P,N,_), nom_p_simple(SN),!.
+verbal_p(gv(vb(v_5),det(art_1),n(n_10), GC),P,N) --> verb(vb(v_5),P,N,_), determinant(det(art_1),_,_,und,_), noun(n(n_10),_,_,prop,_,_), pred_complements(GC,N),!.
+verbal_p(gv(vb(v_5),SN),P,N) --> verb(vb(v_5),P,N,_), nom_p_simple(SN, nsuj),!.
 verbal_p(gv(V,GC),P,N) --> verb(V,P,N,_), pred_complements(GC,N).
 
-pred_complements(gcp(GNB),_) --> nom_p_basic(GNB,_,_).
+pred_complements(gcp(GNB),_) --> nom_p_basic(GNB,_,_,nsuj).
 pred_complements(gcp(GADJB),N) --> adj_p(GADJB,_,N,_).
 %pred_complements(gcp(GNB,GADJB),N) --> adj_p(GADJB,_,N,_),nom_p(GNB,N).
-pred_complements(gcp(GNB,A),N) --> nom_p(GNB,_,N), adv_p(A).
+pred_complements(gcp(GNB,A),N) --> nom_p(GNB,_,N,nsuj), adv_p(A).
 pred_complements(gcp(A),_) --> adv_p(A).
 %pred_complements(gcp(GNB,GADBJ,A),N) --> adj_p(GADBJ,_,N,_), nom_p(GNB,_,N), adv_p(A).
 pred_complements(gcp(GADBJ,A),N) --> adj_p(GADBJ,_,N,_), adv_p(A).
@@ -49,7 +54,7 @@ adj_p(gadj(GADJB,Nx,O),G,N,V) --> adj_p_basic(GADJB,G,N,V), nexus(Nx), sentence(
 
 adv_p(gca(A)) --> adverb(A).
 adv_p(gca(C,A)) --> quantifier(C), adverb(A).
-adv_p(gca(P)) --> prep_p(P,_,_).
+adv_p(gca(P)) --> prep_p(P,_,_,nsuj).
 adv_p(gca(C)) --> quantifier(C).
 
 
@@ -68,6 +73,7 @@ g_nominal(gn(GNB,C,GNB2),terc,pl) --> g_nominal_basico(GNB,_,N), conjuncion(C), 
 g_nominal_basico(gnb(Prop),P, N) --> pronombre(Prop,P,N,_).
 g_nominal_basico(gnb(Nom,Nom2),P,N) --> nombre(Nom,_,N,_,_,P), nombre(Nom2,_,_,_,_,_).
 g_nominal_basico(gnb(Nom),P,N) --> nombre(Nom,_,N,_,_,P).
+%g_nominal_basico(gnb(det(art_1),n(n_10)),f,sg) --> determinante(det(art_1),f,sg,_,_), nombre(n(n_10),f,sg,com,_,_),!.
 g_nominal_basico(gnb(D,Nom),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P).
 %g_nominal_basico(gnb(Prep),P,N) --> g_preposicional(Prep,P,N,_).
 g_nominal_basico(gnb(D,Nom,A),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P), g_adjetival(A,G,N).
@@ -79,7 +85,7 @@ g_preposicional(gp(Prep,Nom),P,N,T) --> preposicion(Prep), nombre(Nom,_,N,_,T,P)
 g_preposicional(gp(Prep,D,Nom),P,N,T) --> preposicion(Prep), determinante(D,G,N,_,_), nombre(Nom,G,N,_,T,P).
 
 g_verbal(gv(V),P,N) --> verbo(V,P,N,_,_).
-g_verbal(gv(vb(v_5),Nom),P,N) --> verbo(vb(v_5),P,N,_,ca), nombre(Nom,_,_,prop,_,_).
+g_verbal(gv(vb(v_5),Nom),P,N) --> verbo(vb(v_5),P,N,_,ca), nombre(Nom,_,_,prop,_,_),!.
 g_verbal(gv(vb(v_5),SN),P,N) --> verbo(vb(v_5),P,N,_,sa),g_nominal_simple(SN),!.
 g_verbal(gv(vb(v_5),Nom,GC),P,N) --> verbo(vb(v_5),P,N,_,sa), nombre(Nom,_,_,com,_,_), g_complementos_predicado(GC,N),!.
 g_verbal(gv(V,GC),P,N) --> verbo(V,P,N,_,_), g_complementos_predicado(GC,N).
