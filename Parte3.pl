@@ -15,7 +15,7 @@ nom_p(gn(GNB,C,GNB2),terc,pl,Comp) --> nom_p_basic(GNB,_,_,Comp), conjunction(C)
 nom_p_basic(gnb(Prop),P,N,_) --> pronoun(Prop,P,N,_).
 nom_p_basic(gnb(Nom,Nom2),_,N,_) --> noun(Nom,_,N,_,_,_), noun(Nom2,_,_,_,_,_).
 nom_p_basic(gnb(det(art_1),n(n_10)),P,N,suj) --> determinant(det(art_1),G,N,und,V), noun(n(n_10),G,N,_,V,P),!.
-nom_p_basic(gnb(Nom),P,N,_) --> noun(Nom,_,N,_,_,P).
+nom_p_basic(gnb(Nom),P,N,_) --> noun(Nom,_,N,_,_,P),!.
 nom_p_basic(gnb(D,Nom),P,N,_) --> determinant(D,G,N,_,V), noun(Nom,G,N,_,V,P),!.
 %nom_p_basic(gnb(Prep),P,N) --> prep_p(Prep,P,N).
 nom_p_basic(gnb(D,Nom,A),P,N,_) --> determinant(D,G,N,_,V), adj_p(A,G,N,V), noun(Nom,G,N,_,_,P).
@@ -72,9 +72,9 @@ g_nominal(gn(GNB,C,GNB2),terc,pl) --> g_nominal_basico(GNB,_,N), conjuncion(C), 
 
 g_nominal_basico(gnb(Prop),P, N) --> pronombre(Prop,P,N,_).
 g_nominal_basico(gnb(Nom,Nom2),P,N) --> nombre(Nom,_,N,_,_,P), nombre(Nom2,_,_,_,_,_).
+g_nominal_basico(gnb(D,Nom),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P),!.
 g_nominal_basico(gnb(Nom),P,N) --> nombre(Nom,_,N,_,_,P).
 %g_nominal_basico(gnb(det(art_1),n(n_10)),f,sg) --> determinante(det(art_1),f,sg,_,_), nombre(n(n_10),f,sg,com,_,_),!.
-g_nominal_basico(gnb(D,Nom),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P).
 %g_nominal_basico(gnb(Prep),P,N) --> g_preposicional(Prep,P,N,_).
 g_nominal_basico(gnb(D,Nom,A),P,N) --> determinante(D,G,N,_,_), nombre(Nom,G,N,com,_,P), g_adjetival(A,G,N).
 
