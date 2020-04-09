@@ -83,7 +83,6 @@ adverbio(adv(adv_4)) --> [alli].
 adverbio(adv(adv_5)) --> [aqui].
 adverbio(adv(adv_6)) --> [no].
 
-%preposicion(prep(prep_1)) --> [a].
 preposicion(prep(prep_1)) --> [en].
 preposicion(prep(prep_2)) --> [de].
 

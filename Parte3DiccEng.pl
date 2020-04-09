@@ -43,22 +43,18 @@ verb(vb(v_1),terc,sg,pres) --> [cuts].
 verb(vb(v_1),prim,_,_) --> [cut].
 verb(vb(v_1),seg,_,_) --> [cut].
 verb(vb(v_1),terc,pl,_) --> [cut].
-%verb(v(v_1),_,_,_) --> [cut].
 verb(vb(v_2),terc,sg,pres) --> [wraps].
 verb(vb(v_2),prim,_,pres) --> [wrap].
 verb(vb(v_2),seg,_,pres) --> [wrap].
 verb(vb(v_2),ter,pl,pres) --> [wrap].
-%verb(v(v_2),_,_,pres) --> [wrap].
 verb(vb(v_3),terc,sg,pres) --> [breaks].
 verb(vb(v_3),prim,_,pres) --> [break].
 verb(vb(v_3),seg,_,pres) --> [break].
 verb(vb(v_3),ter,pl,pres) --> [break].
-%verb(v(v_3),_,_,pres) --> [break].
 verb(vb(v_4),terc,sg,pres) --> [eats].
 verb(vb(v_4),prim, _,pres) --> [eat].
 verb(vb(v_4),seg, _,pres) --> [eat].
 verb(vb(v_4),terc, pl,pres) --> [eat].
-%verb(v(v_4),_, _,pres) --> [eat].
 verb(vb(v_5),terc,sg,pres) --> [loves].
 verb(vb(v_6),terc,sg,pres) --> [studies].
 verb(vb(v_7),_,_,pas) --> [chased].
@@ -74,7 +70,6 @@ verb(vb(v_15),terc,sg,pas) --> [was].
 verb(vb(v_15),prim,_,pas) --> [were].
 verb(vb(v_15),seg,_,pas) --> [were].
 verb(vb(v_15),terc,pl,pas) --> [were].
-%verb(v(v_16),terc, sg,pres) --> [loves].
 
 adjective(adj(adj_1),_,_,nv) --> [red].
 adjective(adj(adj_2),_,_,nv) --> [big].
@@ -84,7 +79,6 @@ adjective(adj(adj_5),_,_,nv) --> [yellow].
 adjective(adj(adj_6),_,_,nv) --> [thin].
 adjective(adj(adj_7),_,_,nv) --> [tall].
 
-%preposition(prep(prep_1)) --> [].
 preposition(prep(prep_1)) --> [at].
 preposition(prep(prep_2)) --> [].
 
