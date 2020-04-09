@@ -6,7 +6,7 @@ fallo:- write("Error. Revise que la oracion sea correcta."), writeln.
 
 analisisEspanol1:-  oracion(X, [el, hombre, come, una, manzana], []), write(X), writeln.
 analisisEspanol1:-  fallo.
-analisisEspanol2:-  oracion(X, [ellos, comen, unas, manzanas], []), write(X), writeln.
+analisisEspanol2:-  oracion(X, [ellos, comen, manzanas], []), write(X), writeln.
 analisisEspanol2:-  fallo.
 analisisEspanol3:-  oracion(X, [tu, comes, una, manzana, roja], []), write(X), writeln.
 analisisEspanol3:-  fallo.
@@ -79,7 +79,7 @@ analisisIngles7:-  sentence(X, [the, student, loves, university], []), write(X),
 analisisIngles7:-  fallo.
 analisisIngles8:-  sentence(X, [the, dog, chased, a, black, cat, in, the, garden], []), write(X), writeln.
 analisisIngles8:-  fallo.
-analisisIngles9:-  sentence(X, [the, university, is, large], []), write(X), writeln.
+analisisIngles9:-  sentence(X, [the, university, is, big], []), write(X), writeln.
 analisisIngles9:-  fallo.
 analisisIngles10:- sentence(X, [the, man, that, we, saw, yesterday, is, my, neighbour], []), write(X), writeln.
 analisisIngles10:- fallo.
@@ -124,7 +124,7 @@ analisisIngles:- write('test para el analisis en ingles\n'),
 
 traducirEspanolIngles1:-  oracion(X, [el, hombre, come, una, manzana], []), sentence(X,Ingles,[]), write(Ingles), writeln.
 traducirEspanolIngles1:-  fallo.
-traducirEspanolIngles2:-  oracion(X, [ellos, comen, unas, manzanas], []), sentence(X,Ingles,[]), write(Ingles), writeln.
+traducirEspanolIngles2:-  oracion(X, [ellos, comen, manzanas], []), sentence(X,Ingles,[]), write(Ingles), writeln.
 traducirEspanolIngles2:-  fallo.
 traducirEspanolIngles3:-  oracion(X, [tu, comes, una, manzana, roja], []), sentence(X,Ingles,[]), write(Ingles), writeln.
 traducirEspanolIngles3:-  fallo.
@@ -197,7 +197,7 @@ traducirInglesEspanol7:-  sentence(X, [the, student, loves, university], []), or
 traducirInglesEspanol7:-  fallo.
 traducirInglesEspanol8:-  sentence(X, [the, dog, chased, a, black, cat, in, the, garden], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol8:-  fallo.
-traducirInglesEspanol9:-  sentence(X, [the, university, is, large], []), oracion(X,Espanol,[]), write(Espanol), writeln.
+traducirInglesEspanol9:-  sentence(X, [the, university, is, big], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol9:-  fallo.
 traducirInglesEspanol10:- sentence(X, [the, man, that, we, saw, yesterday, is, my, neighbour], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol10:- fallo.
