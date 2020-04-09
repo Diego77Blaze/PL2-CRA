@@ -1,4 +1,4 @@
-:-consult(draw).
+﻿:-consult(draw).
 :-consult('Parte3').
 
 writeln:- write('\n').
@@ -71,13 +71,13 @@ analisisIngles3:-  sentence(X, [you, eat, a, red, apple], []), write(X), writeln
 analisisIngles3:-  fallo.
 analisisIngles4:-  sentence(X, [john, loves, mary], []), write(X), writeln.
 analisisIngles4:-  fallo.
-analisisIngles5:-  sentence(X, [the, big, cat, eats, a, grey, mouse], []), write(X), writeln.
+analisisIngles5:-  sentence(X, [the, big, cat, eats, a, gray, mouse], []), write(X), writeln.
 analisisIngles5:-  fallo.
 analisisIngles6:-  sentence(X, [john, studies, at, university], []), write(X), writeln.
 analisisIngles6:-  fallo.
 analisisIngles7:-  sentence(X, [the, student, loves, university], []), write(X), writeln.
 analisisIngles7:-  fallo.
-analisisIngles8:-  sentence(X, [the, dog, chased, a, black, cat, in, the, garden], []), write(X), writeln.
+analisisIngles8:-  sentence(X, [the, dog, chased, a, black, cat, at, the, garden], []), write(X), writeln.
 analisisIngles8:-  fallo.
 analisisIngles9:-  sentence(X, [the, university, is, big], []), write(X), writeln.
 analisisIngles9:-  fallo.
@@ -189,13 +189,13 @@ traducirInglesEspanol3:-  sentence(X, [you, eat, a, red, apple], []), oracion(X,
 traducirInglesEspanol3:-  fallo.
 traducirInglesEspanol4:-  sentence(X, [john, loves, mary], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol4:-  fallo.
-traducirInglesEspanol5:-  sentence(X, [the, big, cat, eats, a, grey, mouse], []), oracion(X,Espanol,[]), write(Espanol), writeln.
+traducirInglesEspanol5:-  sentence(X, [the, big, cat, eats, a, gray, mouse], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol5:-  fallo.
 traducirInglesEspanol6:-  sentence(X, [john, studies, at, university], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol6:-  fallo.
 traducirInglesEspanol7:-  sentence(X, [the, student, loves, university], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol7:-  fallo.
-traducirInglesEspanol8:-  sentence(X, [the, dog, chased, a, black, cat, in, the, garden], []), oracion(X,Espanol,[]), write(Espanol), writeln.
+traducirInglesEspanol8:-  sentence(X, [the, dog, chased, a, black, cat, at, the, garden], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol8:-  fallo.
 traducirInglesEspanol9:-  sentence(X, [the, university, is, big], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol9:-  fallo.
