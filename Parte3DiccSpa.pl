@@ -1,3 +1,4 @@
+%determinante
 determinante(det(art_1),f,sg,def,_) --> [la].
 determinante(det(art_1),m,sg,def,_) --> [el].
 determinante(det(art_1),m,pl,def,_) --> [los].
@@ -8,7 +9,7 @@ determinante(det(art_3),m,pl,ind,_) --> [unos].
 determinante(det(art_3),f,pl,ind,_) --> [unas].
 determinante(det(art_4),_,pl,und,_) --> [].
 determinante(det(pos),_,sg,pos,_) --> [mi].
-
+%pronombre
 pronombre(pron(pron_1),prim,sg,_) --> [yo].
 pronombre(pron(pron_2),seg,sg,_) --> [tu].
 pronombre(pron(pron_3),terc,sg,m) --> [el].
@@ -19,7 +20,7 @@ pronombre(pron(pron_6),seg,pl,m) --> [vosotros].
 pronombre(pron(pron_6),seg,pl,f) --> [vosotras].
 pronombre(pron(pron_7),terc,pl,m) --> [ellos].
 pronombre(pron(pron_7),terc,pl,f) --> [ellas].
-
+%nombre
 nombre(n(n_1),f,sg,com,obj,terc) --> [piedra].
 nombre(n(n_2),m,sg,com,obj,terc) --> [papel].
 nombre(n(n_3),f,pl,com,obj,terc) --> [tijeras].
@@ -43,7 +44,7 @@ nombre(n(n_21),m,sg,com,plac,terc) --> [jardin].
 nombre(n(n_22),m,sg,com,obj,terc) --> [fantasma,de,canterville].
 nombre(n(n_23),f,pl,com,obj,terc) --> [manzanas].
 nombre(n(n_24),m,pl,com,obj,terc) --> [ratones].
-
+%verbo
 verbo(vb(v_1),terc,sg,pres,_) --> [corta].
 verbo(vb(v_1),terc,pl,pres,_) --> [cortan].
 verbo(vb(v_2),terc,sg,pres,_) --> [envuelve].
@@ -66,8 +67,7 @@ verbo(vb(v_13),terc,sg,pas,_) --> [escribio].
 verbo(vb(v_14),terc,sg,pas,_) --> [cazo].
 verbo(vb(v_15),prim,sg,pas,_) --> [era].
 verbo(vb(v_15),terc,sg,pas,_) --> [era].
-%verbo(v(v_16),terc, sg,pres) --> [ama].
-
+%adjetivo
 adjetivo(adj(adj_1), f, sg, _) --> [roja].
 adjetivo(adj(adj_2), m, sg, _) --> [grande].
 adjetivo(adj(adj_3), m, sg, _) --> [gris].
@@ -75,21 +75,21 @@ adjetivo(adj(adj_4), m, sg, _) --> [negro].
 adjetivo(adj(adj_5), m, sg, _) --> [amarillo].
 adjetivo(adj(adj_6), m, sg, _) --> [delgado].
 adjetivo(adj(adj_7), f, sg, _) --> [alta].
-
+%adverbio
 adverbio(adv(adv_1)) --> [ayer].
 adverbio(adv(adv_2)) --> [bien].
 adverbio(adv(adv_3)) --> [hoy].
 adverbio(adv(adv_4)) --> [alli].
 adverbio(adv(adv_5)) --> [aqui].
 adverbio(adv(adv_6)) --> [no].
-
+%preposicion
 preposicion(prep(prep_1)) --> [en].
 preposicion(prep(prep_2)) --> [de].
-
+%nexo
 nexo(nx(nx_1)) --> [que].
-
+%cuantificador
 cuantificador(cuant(cuant_1)) --> [muy].
-
+%conjuncion
 conjuncion(conj(conj_1)) --> [y].
 conjuncion(conj(conj_2)) --> [o].
 conjuncion(conj(conj_3)) --> [u].

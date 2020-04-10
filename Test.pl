@@ -3,7 +3,7 @@
 
 writeln:- write('\n').
 fallo:- write("Error. Revise que la oracion sea correcta."), writeln.
-
+%Analisis en Español
 analisisEspanol1:-  oracion(X, [el, hombre, come, una, manzana], []), write(X), writeln.
 analisisEspanol1:-  fallo.
 analisisEspanol2:-  oracion(X, [ellos, comen, manzanas], []), write(X), writeln.
@@ -33,36 +33,37 @@ analisisEspanol13:- fallo.
 analisisEspanol14:- oracion(X, [oscar, wilde, escribio, el, fantasma, de, canterville], []), write(X), writeln.
 analisisEspanol14:- fallo.
 
-analisisEspanol:-write('Analisis en Espanol\n'),
-                    write("1.-  "),
-                    analisisEspanol1,
-                    write("2.-  "),
-                    analisisEspanol2,
-                    write("3.-  "),
-                    analisisEspanol3,
-                    write("4.-  "),
-                    analisisEspanol4,
-                    write("5.-  "),
-                    analisisEspanol5,
-                    write("6.-  "),
-                    analisisEspanol6,
-                    write("7.-  "),
-                    analisisEspanol7,
-                    write("8.-  "),
-                    analisisEspanol8,
-                    write("9.-  "),
-                    analisisEspanol9,
-                    write("10.- "),
-                    analisisEspanol10,
-                    write("11.- "),
-                    analisisEspanol11,
-                    write("12.- "),
-                    analisisEspanol12,
-                    write("13.- "),
-                    analisisEspanol13,
-                    write("14.- "),
-                    analisisEspanol14,!.
-
+analisisEspanol:-
+        write('Analisis en Espanol\n'),
+        write("1.-  "),
+        analisisEspanol1,
+        write("2.-  "),
+        analisisEspanol2,
+        write("3.-  "),
+        analisisEspanol3,
+        write("4.-  "),
+        analisisEspanol4,
+        write("5.-  "),
+        analisisEspanol5,
+        write("6.-  "),
+        analisisEspanol6,
+        write("7.-  "),
+        analisisEspanol7,
+        write("8.-  "),
+        analisisEspanol8,
+        write("9.-  "),
+        analisisEspanol9,
+        write("10.- "),
+        analisisEspanol10,
+        write("11.- "),
+        analisisEspanol11,
+        write("12.- "),
+        analisisEspanol12,
+        write("13.- "),
+        analisisEspanol13,
+        write("14.- "),
+        analisisEspanol14,!.
+%Analisis en Ingles
 analisisIngles1:-  sentence(X, [the, man, eats, an, apple], []), write(X), writeln.
 analisisIngles1:-  fallo.
 analisisIngles2:-  sentence(X, [they, eat, some, apples], []), write(X), writeln.
@@ -92,36 +93,37 @@ analisisIngles13:- fallo.
 analisisIngles14:- sentence(X, [oscar, wilde, wrote, the, canterville, ghost], []), write(X), writeln.
 analisisIngles14:- fallo.
 
-analisisIngles:- write('test para el analisis en ingles\n'),
-             write("1.-  "),
-             analisisIngles1,
-             write("2.-  "),
-             analisisIngles2,
-             write("3.-  "),
-             analisisIngles3,
-             write("4.-  "),
-             analisisIngles4,
-             write("5.-  "),
-             analisisIngles5,
-             write("6.-  "),
-             analisisIngles6,
-             write("7.-  "),
-             analisisIngles7,
-             write("8.-  "),
-             analisisIngles8,
-             write("9.-  "),
-             analisisIngles9,
-             write("10.- "),
-             analisisIngles10,
-             write("11.- "),
-             analisisIngles11,
-             write("12.- "),
-             analisisIngles12,
-             write("13.- "),
-             analisisIngles13,
-             write("14.- "),
-             analisisIngles14,!.
-
+analisisIngles:- 
+        write('test para el analisis en ingles\n'),
+        write("1.-  "),
+        analisisIngles1,
+        write("2.-  "),
+        analisisIngles2,
+        write("3.-  "),
+        analisisIngles3,
+        write("4.-  "),
+        analisisIngles4,
+        write("5.-  "),
+        analisisIngles5,
+        write("6.-  "),
+        analisisIngles6,
+        write("7.-  "),
+        analisisIngles7,
+        write("8.-  "),
+        analisisIngles8,
+        write("9.-  "),
+        analisisIngles9,
+        write("10.- "),
+        analisisIngles10,
+        write("11.- "),
+        analisisIngles11,
+        write("12.- "),
+        analisisIngles12,
+        write("13.- "),
+        analisisIngles13,
+        write("14.- "),
+        analisisIngles14,!.
+%Traducción Español-Inglés
 traducirEspanolIngles1:-  oracion(X, [el, hombre, come, una, manzana], []), sentence(X,Ingles,[]), write(Ingles), writeln.
 traducirEspanolIngles1:-  fallo.
 traducirEspanolIngles2:-  oracion(X, [ellos, comen, manzanas], []), sentence(X,Ingles,[]), write(Ingles), writeln.
@@ -150,8 +152,9 @@ traducirEspanolIngles13:- oracion(X, [juan, es, delgado, y, maria, es, alta], []
 traducirEspanolIngles13:- fallo.
 traducirEspanolIngles14:- oracion(X, [oscar, wilde, escribio, el, fantasma, de, canterville], []), sentence(X,Ingles,[]), write(Ingles), writeln.
 traducirEspanolIngles14:- fallo.
-
-traduccionEspanolIngles:- write('Traduccion de español a ingles\n'),
+%Traducción Inglés-Español
+traduccionEspanolIngles:- 
+        write('Traduccion de español a ingles\n'),
         write("1.-  "),
         traducirEspanolIngles1,
         write("2.-  "),
@@ -210,32 +213,33 @@ traducirInglesEspanol13:- fallo.
 traducirInglesEspanol14:- sentence(X, [oscar, wilde, wrote, the, canterville, ghost], []), oracion(X,Espanol,[]), write(Espanol), writeln.
 traducirInglesEspanol14:- fallo.
 
-traduccionInglesEspanol:- write('Traduccion de ingles a español\n'),
-                    write("1.-  "),
-                    traducirInglesEspanol1,
-                    write("2.-  "),
-                    traducirInglesEspanol2,
-                    write("3.-  "),
-                    traducirInglesEspanol3,
-                    write("4.-  "),
-                    traducirInglesEspanol4,
-                    write("5.-  "),
-                    traducirInglesEspanol5,
-                    write("6.-  "),
-                    traducirInglesEspanol6,
-                    write("7.-  "),
-                    traducirInglesEspanol7,
-                    write("8.-  "),
-                    traducirInglesEspanol8,
-                    write("9.-  "),
-                    traducirInglesEspanol9,
-                    write("10.- "),
-                    traducirInglesEspanol10,
-                    write("11.- "),
-                    traducirInglesEspanol11,
-                    write("12.- "),
-                    traducirInglesEspanol12,
-                    write("13.- "),
-                    traducirInglesEspanol13,
-                    write("14.- "),
-                    traducirInglesEspanol14,!.
+traduccionInglesEspanol:- 
+        write('Traduccion de ingles a español\n'),        
+        write("1.-  "),
+        traducirInglesEspanol1,
+        write("2.-  "),
+        traducirInglesEspanol2,
+        write("3.-  "),
+        traducirInglesEspanol3,
+        write("4.-  "),
+        traducirInglesEspanol4,
+        write("5.-  "),
+        traducirInglesEspanol5,
+        write("6.-  "),
+        traducirInglesEspanol6,
+        write("7.-  "),
+        traducirInglesEspanol7,
+        write("8.-  "),
+        traducirInglesEspanol8,
+        write("9.-  "),
+        traducirInglesEspanol9,
+        write("10.- "),
+        traducirInglesEspanol10,
+        write("11.- "),
+        traducirInglesEspanol11,
+        write("12.- "),
+        traducirInglesEspanol12,
+        write("13.- "),
+        traducirInglesEspanol13,
+        write("14.- "),
+        traducirInglesEspanol14,!.
