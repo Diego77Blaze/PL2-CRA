@@ -1,4 +1,5 @@
-﻿:-consult('Parte3').
+﻿:-consult('GramaticaEng').
+:-consult('GramaticaSpa').
 
 writeln:- write('\n').
 fallo:- write("Error. Revise que la oracion sea correcta."), writeln.
