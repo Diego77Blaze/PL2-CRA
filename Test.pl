@@ -1,5 +1,4 @@
-﻿:-consult(draw).
-:-consult('Parte3').
+﻿:-consult('Parte3').
 
 writeln:- write('\n').
 fallo:- write("Error. Revise que la oracion sea correcta."), writeln.
